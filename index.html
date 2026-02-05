@@ -1,0 +1,65 @@
+index.html  <!DOCTYPE html>
+<html>
+<head>
+<title>Buyer Journey Decision Tree</title>
+<style>
+body{font-family:system-ui;background:#f5f7fa;padding:30px}
+.container{max-width:1000px;margin:0 auto}
+h1{text-align:center;color:#1a1a2e}
+.card{background:white;border-radius:12px;padding:20px;margin:20px 0;box-shadow:0 2px 8px rgba(0,0,0,0.1)}
+table{width:100%;border-collapse:collapse}
+th,td{padding:10px;border:1px solid #ddd;text-align:left}
+th{background:#f5f5f5}
+.rl1{background:#c8e6c9}
+.rl2{background:#fff3e0}
+.rl3{background:#e3f2fd}
+.grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}
+.seq{padding:16px;border-radius:8px}
+</style>
+</head>
+<body>
+<div class="container">
+<h1>Buyer Journey Decision Tree</h1>
+
+<div class="card">
+<h2>1. Entry Points</h2>
+<table>
+<tr><th>Entry Point</th><th>Trigger</th><th>Default RL</th><th>Action</th></tr>
+<tr><td>New TAL Account</td><td>Account added to TAL</td><td class="rl3">RL3</td><td>Unify runs RL3 sequence</td></tr>
+<tr><td>Event Attendee</td><td>Registered for event</td><td>Check RL</td><td>Event-specific sequence by RL</td></tr>
+<tr><td>High-Value Page</td><td>Visits pricing/demo</td><td class="rl1">RL1</td><td>Upgrade to RL1, high-intent sequence</td></tr>
+</table>
+</div>
+
+<div class="card">
+<h2>2. Decision Rules</h2>
+<table>
+<tr><td><b>New TAL account</b></td><td>RL3, run awareness sequence</td></tr>
+<tr><td><b>RL3 engages</b></td><td>Upgrade to RL2</td></tr>
+<tr><td><b>RL2 high engagement</b></td><td>Check MQL, rep takes over if yes</td></tr>
+<tr><td><b>RL2 dark 90 days</b></td><td>Downgrade to RL3</td></tr>
+<tr><td><b>High-intent signal</b></td><td>RL1, meeting sequence</td></tr>
+<tr><td><b>RL1 responds</b></td><td>Rep takes over immediately</td></tr>
+<tr><td><b>MQL created</b></td><td>Rep takes over, automation stops</td></tr>
+</table>
+</div>
+
+<div class="card">
+<h2>3. Sequences by RL</h2>
+<div class="grid">
+<div class="seq rl3"><h3>RL3: Awareness</h3><p>5 touches / 6 weeks</p><ul><li>Industry benchmark</li><li>Thought leadership</li><li>Relevant news</li><li>Peer mention</li><li>Soft CTA</li></ul></div>
+<div class="seq rl2"><h3>RL2: Engagement</h3><p>6 touches / 4 weeks</p><ul><li>Activity follow-up</li><li>Case study</li><li>Playbook</li><li>Webinar</li><li>ROI angle</li><li>Soft meeting ask</li></ul></div>
+<div class="seq rl1"><h3>RL1: Meeting</h3><p>5 touches / 2 weeks</p><ul><li>Direct meeting ask</li><li>Case study + ask</li><li>ROI calculator</li><li>Peer reference</li><li>Final 15 min ask</li></ul></div>
+</div>
+</div>
+
+<div class="card" style="background:#f3e5f5">
+<h2>4. When Rep Takes Over</h2>
+<p><b>MQL Created:</b> Contact hits threshold, rep takes over in Outreach.io</p>
+<p><b>RL1 Response:</b> Any response from high-intent account, rep jumps in immediately</p>
+<p style="margin-top:16px;padding:12px;background:#e1bee7;border-radius:8px"><b>KEY:</b> Unify handles until MQL or RL1 response. Rep only works qualified accounts.</p>
+</div>
+
+</div>
+</body>
+</html>
